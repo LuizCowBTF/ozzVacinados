@@ -1,0 +1,78 @@
+<div class="container">
+  <br><br>
+  <div class="float-left">
+    <h3>Lista dos vacinados.</h3>
+  </div>
+  <div class="float-right">
+    <button type="button" class="btn btn-primary" [routerLink]="['novo']">Novo</button>
+    <button type="button" class="btn btn-secondary">Atualizar</button>
+  </div>
+  <br>
+  <table class="table table-hover" *ngIf="vacinados$ | async as vacinados; else loading">
+    <thead>
+      <tr>
+        <th>Identificação no sistema</th>
+        <th>Identificação do vacinado</th>
+        <th>Idade<br>vacinado</th>
+        <th>Nascimento<br>vacinado</th>
+        <th>Sexo<br>Vacinado</th>
+        <th>Cor<br>vacinado</th>
+        <th>Munícipio</th>
+        <th>C.E.P.</th>
+        <th>Estado</th>
+        <th>Nacionalidade</th>
+        <th>Identificação Empresa</th>
+        <th>Razão Social empresa</th>
+        <th>Nome empresa</th>
+        <th>Munícipio</th>
+        <th>Estado</th>
+        <th>Grupo vacinado<br>no Sistema</th>
+        <th>Nome do grupo<br>do vacinado</th>
+        <th>Vacina Lote</th>
+        <th>Fabricante vacina</th>
+        <th>Data aplicação</th>
+        <th>Nome da vacina</th>
+        <th>Vacina código</th>
+        <th>Vacina dose</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vacinado of vacinados">
+        <td>{{ vacinado.document_id }}</td>
+        <td>{{ vacinado.paciente_id }}</td>
+        <td>{{ vacinado.paciente_idade }}</td>
+        <td>{{ vacinado.paciente_datanascimento }}</td>
+        <td>{{ vacinado.paciente_enumsexobiologico }}</td>
+        <td>{{ vacinado.paciente_racacor_valor }}</td>
+        <td>{{ vacinado.paciente_endereco_nmmunicipio }}</td>
+        <td>{{ vacinado.paciente_endereco_cep }}</td>
+        <td>{{ vacinado.paciente_endereco_uf }}</td>
+        <td>{{ vacinado.paciente_nacionalidade_enumnacionalidade }}</td>
+        <td>{{ vacinado.estabelecimento_valor }}</td>
+        <td>{{ vacinado.estabelecimento_razaosocial }}</td>
+        <td>{{ vacinado.estabelecimento_nofantasia }}</td>
+        <td>{{ vacinado.estabelecimento_municipio_nome }}</td>
+        <td>{{ vacinado.estabelecimento_uf }}</td>
+        <td>{{ vacinado.vacina_grupoatendimento_codigo }}</td>
+        <td>{{ vacinado.vacina_grupoatendimento_nome }}</td>
+        <td>{{ vacinado.vacina_lote }}</td>
+        <td>{{ vacinado.vacina_fabricante_nome }}</td>
+        <td>{{ vacinado.vacina_dataaplicacao }}</td>
+        <td>{{ vacinado.vacina_nome }}</td>
+        <td>{{ vacinado.vacina_codigo }}</td>
+        <td>{{ vacinado.vacina_descricao_dose }}</td>
+        <td>
+          <span class="float-right">
+            <button class="btn btn-outline-warning btn-sm">Editar</button>
+            <button class="btn btn-outline-danger btn-sm">Deletar</button>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #loading>
+    <span>Carregando...</span>
+  </ng-template>
+</div>

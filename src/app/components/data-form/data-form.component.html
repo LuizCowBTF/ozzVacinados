@@ -1,0 +1,149 @@
+<div class="container">
+  <br><br>
+  <div class="row">
+    <h3>Formulario para novos vacinados.</h3>
+  </div>
+  <br>
+  <form class="form-horizontal" [formGroup]="formVacinados" (ngSubmit)="onSubmit()">
+    <h4>Vacinados</h4>
+    <div class="container">
+      <div class="form-row">
+        <div class="col-md-12 mb-3">
+          <label for="document_id">Identificação no sistema.</label>
+          <input type="text" class="form-control" id="document_id" formControlName="document_id" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="paciente_id">Identificação do vacinado</label>
+          <input type="text" class="form-control" id="paciente_id" formControlName="paciente_id" />
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="paciente_idade">Idade vacinado</label>
+          <input type="text" class="form-control" id="paciente_idade" formControlName="paciente_idade" />
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="paciente_datanascimento">Nascimento vacinado</label>
+          <input type="date" class="form-control" id="paciente_datanascimento" formControlName="paciente_datanascimento" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-3 mb-3">
+          <label for="paciente_enumsexobiologico">Sexo vacinado - (Biológico)</label>
+          <select class="form-control" id="paciente_enumsexobiologico" formControlName="paciente_enumsexobiologico">
+            <option value="M">Masculino</option>
+            <option value="F">Feminino</option>
+          </select>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="paciente_racacor_valor">Cor vacinado</label>
+          <select class="form-control" id="paciente_racacor_valor" formControlName="paciente_racacor_valor">
+            <option value="1">Branca</option>
+            <option value="2">Preta</option>
+            <option value="3">Parda</option>
+            <option value="4">Amarela</option>
+            <option value="99">Sem informação</option>
+          </select>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="paciente_endereco_nmmunicipio">Munícipio vacinado</label>
+          <input type="text" class="form-control" id="paciente_endereco_nmmunicipio" formControlName="paciente_endereco_nmmunicipio" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-3 mb-3">
+          <label for="paciente_endereco_cep">C.E.P.</label>
+          <input type="text" class="form-control" id="paciente_endereco_cep" formControlName="paciente_endereco_cep" pattern="[0-8]{2}.[0-8]{3}-[0-8]{3}" />
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="paciente_endereco_uf">Estado vacinado</label>
+          <input type="text" class="form-control" id="paciente_endereco_uf" formControlName="paciente_endereco_uf" />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="paciente_nacionalidade_enumnacionalidade">Nacionalidade vacinado</label>
+          <input type="text" class="form-control" id="paciente_nacionalidade_enumnacionalidade" formControlName="paciente_nacionalidade_enumnacionalidade" />
+        </div>
+      </div>
+    </div>
+    <hr>
+    <br>
+    <h4>Empresas Vacinadoras</h4>
+    <div class="container">
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="estabelecimento_valor">Identificação da Empresa no sistema.</label>
+          <input type="text" class="form-control" id="estabelecimento_valor" formControlName="estabelecimento_valor" />
+        </div>
+        <div class="col-md-8 mb-3">
+          <label for="estabelecimento_razaosocial">Razão Social da empresa.</label>
+          <input type="text" class="form-control" id="estabelecimento_razaosocial" formControlName="estabelecimento_razaosocial" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="estabelecimento_nofantasia">Nome da empresa.</label>
+          <input type="text" class="form-control" id="estabelecimento_nofantasia" formControlName="estabelecimento_nofantasia" />
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="estabelecimento_municipio_nome">Munícipio da empresa</label>
+          <input type="text" class="form-control" id="estabelecimento_municipio_nome" formControlName="estabelecimento_municipio_nome" />
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="estabelecimento_uf">Estado da empresa</label>
+          <input type="text" class="form-control" id="estabelecimento_uf" formControlName="estabelecimento_uf" />
+        </div>
+      </div>
+    </div>
+    <br>
+    <hr>
+    <h4>Vacinas</h4>
+    <div class="container">
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="vacina_grupoatendimento_codigo">Grupo do vacinado no sistema.</label>
+          <input type="text" class="form-control" id="vacina_grupoatendimento_codigo" formControlName="vacina_grupoatendimento_codigo" />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="vacina_grupoatendimento_nome">Nome do Grupo do vacinado.</label>
+          <input type="text" class="form-control" id="vacina_grupoatendimento_nome" formControlName="vacina_grupoatendimento_nome" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-3 mb-3">
+          <label for="vacina_lote">Vacina lote.</label>
+          <input type="text" class="form-control" id="vacina_lote" formControlName="vacina_lote" />
+        </div>
+        <div class="col-md-5 mb-3">
+          <label for="vacina_fabricante_nome">Fabricante da vacina.</label>
+          <input type="text" class="form-control" id="vacina_fabricante_nome" formControlName="vacina_fabricante_nome" />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="vacina_dataaplicacao">Data da aplicação.</label>
+          <input type="date" class="form-control" id="vacina_dataaplicacao" formControlName="vacina_dataaplicacao" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-6 mb-2">
+          <label for="vacina_nome">Nome da vacina.</label>
+          <input type="text" class="form-control" id="vacina_nome" formControlName="vacina_nome" />
+        </div>
+        <div class="col-md-3 mb-5">
+          <label for="vacina_codigo">Vacina código.</label>
+          <input type="text" class="form-control" id="vacina_codigo" formControlName="vacina_codigo" />
+        </div>
+        <div class="col-md-3 mb-5">
+          <label for="vacina_descricao_dose">Dose da vacina</label>
+          <input type="text" class="form-control" id="vacina_descricao_dose" formControlName="vacina_descricao_dose" />
+        </div>
+      </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+    <br><br>
+    <hr>
+    <br><Br><br>
+    <!--app-form-debug [form]="formVacinados"></!--app-form-debug-->
+  </form>
+</div>

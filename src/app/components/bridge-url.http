@@ -1,0 +1,6 @@
+http://localhost:3000/vacinados
+
+
+###
+
+GET http://localhost:3000/vacinados/1 HTTP/1.1
